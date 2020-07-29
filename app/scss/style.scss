@@ -173,43 +173,49 @@
             margin-left: 40px;
             transform: translateY(25px);
         }
-    }
-    &__item-1,
-    &__item-3{
-        position: relative;
-        &::before,
-        &::after{
-            content: '';
-            position: absolute; 
-            background-repeat: no-repeat;
-            background-position: 0 0;
+        &:nth-child(3){
+            margin-left: 30px;
         }
-    }
-    &__item-1{
-        &::before{
-            height: 45px;
-            width: 245px;
-            background-image: url(../icons/line1.svg);
-            right: -55px;
-            top: 50px;
+        &:nth-child(4){
+            margin-left: 60px;
+        }
+        &:first-child,
+        &:nth-child(3){
+            position: relative;
+            &::before,
+            &::after{
+                content: '';
+                position: absolute; 
+                background-repeat: no-repeat;
+                background-position: 0 0;
             }
         }
-    &__item-3{
-        &::before{
-            height: 39px;
-            width: 254px;
-            background-image: url(../icons/line3.svg);
-            right: -55px;
-            top: 50px;
+        &:first-child{
+            &::before{
+                height: 45px;
+                width: 245px;
+                background-image: url(../icons/line1.svg);
+                right: -55px;
+                top: 50px;
+                }
             }
-        &::after{
-            height: 62px;
-            width: 463px;
-            background-image: url(../icons/line2.svg);
-            top: -70px;
-            right: -54px;
+        &:nth-child(3){
+            &::before{
+                height: 39px;
+                width: 254px;
+                background-image: url(../icons/line3.svg);
+                right: -55px;
+                top: 50px;
+                }
+            &::after{
+                height: 62px;
+                width: 463px;
+                background-image: url(../icons/line2.svg);
+                top: -70px;
+                right: -54px;
+            }
         }
-    }
+    }  
     &__num{
         line-height: 41px;
         font-size: 36px;
@@ -247,7 +253,192 @@
         line-height: 18px;
     }
 }
+.specification{
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 25px;
+    }
+    &__item--center{
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+    &__box{
+        width: 280px;
+        position: relative;
+        margin-top: 10px;
+        &::before{
+            content: '';
+            position: absolute;
+            background-repeat: no-repeat;
+            background-position:0 0;
+            background-size: contain;
+        }
+    }
+    &__box-2{
+        margin-top: 140px;
+    }
+    &__box-4{
+        margin-top: 160px;
+    }
+    &__box-1::before{
+        background-image: url(../icons/pointer1.svg);
+        width: 221px;
+        height: 106px;
+        right: -140px;
+        top: 16px;
 
+    }
+    &__box-2::before{
+        background-image: url(../icons/pointer2.svg);
+        width: 340px;
+        height: 75px;
+        right: -371px;
+        top: -68px;
+
+    }
+    &__box-3::before{
+        background-image: url(../icons/pointer3.svg);
+        width: 258px;
+        height: 103px;
+        left: -299px;
+        top: 44px;
+    }
+    &__box-4::before{
+        background-image: url(../icons/pointer4.svg);
+        width: 124px;
+        height: 89px;
+        left: -172px;
+        top: -92px;
+    }
+    &__box-title{
+        font-size: 21px;
+        line-height: 28px;
+        @extend %ubuntu-bold;
+        margin-bottom: 10px;
+    }
+    &__box-text{
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 18px;
+    }
+}
+.questions{
+    &__items{
+        max-width: 757px;
+        padding-bottom: 15px;
+    }
+    &__item{
+        background-color: rgba(0, 0, 0, 0.3);
+        max-width: 690px;
+        position: relative;
+        &:nth-child(3)::before{
+            content: '';
+            position: absolute;
+            width: 319px;
+            height: 125px;
+            top: -33px;
+            right: -386px;
+            background-image: url('../images/half dron.png');
+        }
+    }
+    &__item-title{
+        max-width: 690px;
+        font-size: 21px;
+        line-height: 28px;
+        @extend %ubuntu-medium;
+        color: rgba(#fff, .8);
+        padding: 20px 20px 40px 24px;
+        position: relative;
+        margin-bottom: 4px;
+        cursor: pointer;
+        &::after{
+            content: url('../icons/Vector.svg');
+            position: absolute;
+            width: 72px;
+            height: 67px;
+            background-color: #fff;
+            right: -72px;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    &__item-txt{
+        padding: 0 5px 10px 75px;
+        font-size: 15px;
+        line-height: 22px;
+        margin: 0 0 4px;
+        display: none;
+    }
+    &__item.questions__item--active{
+        .questions__item-title::after{
+            transform: rotate(180deg);
+        }
+        .questions__item-txt{
+        display: block;
+        }
+    }
+}
+.contacts{
+    &__inner{
+        display: flex;
+    }
+    &__info{
+        width: 240px;
+        margin-right: 60px;
+    }
+    &__info-box{
+        margin-bottom: 10px;
+    }
+    &__info-title{
+        line-height: 24px;
+        font-size: 21px;
+        @extend %ubuntu-bold;
+        margin: 0 0 13px;
+    }
+    &__info-phone,
+    &__info-email{
+        font-size: 15px;
+        line-height: 18px;
+    }
+    &__info-email:hover{
+        text-decoration: underline;
+    }
+    &__form{
+        width: 570px;
+        margin-right: 186px;
+    }
+    &__form-title{
+        line-height: 24px;
+        font-size: 21px;
+        @extend %ubuntu-bold;
+        margin: 0 0 13px;
+    }
+    &__form-txt{
+        font-size: 15px;
+        line-height: 18px;
+        max-width: 0 0 12px;
+    }
+    &__form-line{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__form-input{
+        width: 49%;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 15px;
+        border: none;
+    }
+    &__form-textarea{
+        background: rgba(0, 0, 0, 0.5);
+    }
+    &__form-btn{
+
+    }
+}
 
 
 
